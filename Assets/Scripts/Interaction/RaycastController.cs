@@ -17,6 +17,19 @@ public class RaycastController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hitInfo, raycastDistance, layerMask))
+        {
+            if(Input.GetMouseButton(0))
+            {
+                Debug.Log("you Hit that shit");
+            }
+            //Debug.Log("Hit that shit");
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hitInfo.distance, Color.red);
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hitInfo.distance, Color.green);
+        }
         //TODO: Raycast
         //1. Perform a raycast originating from the gameobject's position towards its forward direction.
         //   Make sure that the raycast will only hit the layer specified in the layermask
