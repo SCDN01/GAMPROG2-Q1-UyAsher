@@ -22,13 +22,11 @@ public class RaycastController : MonoBehaviour
             if(Input.GetMouseButton(0))
             {
                 Debug.Log("you Hit that shit");
+                
             }
-            //Debug.Log("Hit that shit");
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hitInfo.distance, Color.red);
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hitInfo.distance, Color.green);
+
+
         }
         //TODO: Raycast
         //1. Perform a raycast originating from the gameobject's position towards its forward direction.
